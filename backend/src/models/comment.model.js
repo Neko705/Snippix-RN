@@ -15,7 +15,7 @@ const commentSchema = new mongoose.Schema(
     content: {
       type: String,
       required: true,
-      maxLength: 280,
+      maxlength: 280,
     },
     likes: [
       {

@@ -21,7 +21,7 @@ app.use("/api/users", userRoutes);
 app.use("/api/posts", postRoutes);
 
 // Error handling middleware
-app.use((err, req, res) => {
+app.use((err, req, res, next) => {
   console.error('Error:', err);
   res.status(500).json({ error: err.message || 'Internal Server Error' });
 });

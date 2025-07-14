@@ -24,7 +24,7 @@ export const createComment = asyncHandler(async (req, res) => {
         return res.status(400).json({ error: 'Comment content cannot be empty' });
     }
 
-    const user = await User.findById({ clerkId: userId });
+    const user = await User.findOne({ clerkId: userId });
     const post = await Post.findById(postId);
 
     const comment = await Comment.create({
@@ -73,6 +73,6 @@ export const deleteComment = asyncHandler(async (req, res) => {
 
     // Delete the comment
     await Comment.findByIdAndDelete(commentId);
-    
-   res.status(204).send({ message: 'Comment deleted successfully' });
+
+   res.status(200).send({ message: 'Comment deleted successfully' });
 });

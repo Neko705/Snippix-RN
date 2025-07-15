@@ -1,5 +1,5 @@
 import e from "express";
-import { aj } from "../config/arcjet";
+import { aj } from "../config/arcjet.js";
 
 // Arcjet middleware to apply security rules
 export const arcjetMiddleware = async (req, res, next) => {
